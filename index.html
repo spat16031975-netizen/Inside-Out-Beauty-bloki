@@ -175,6 +175,28 @@ footer{padding-bottom:88px!important}
 #book>div{padding:18px 18px 22px!important}
 }
 
+.hero-chips{display:none}
+@media (max-width:760px){
+#top{position:relative!important;display:block!important;height:calc(100vh - var(--hh,140px))!important;height:calc(100svh - var(--hh,140px))!important;min-height:380px;max-height:780px;overflow:hidden!important;background:#2A2121!important}
+#top>div:nth-child(2){position:absolute!important;inset:0!important;margin:0!important;width:100%!important;height:100%!important;max-width:none!important}
+#top>div:nth-child(2) img{position:absolute!important;inset:0!important;left:0!important;width:100%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:50% 14%!important}
+#top>div:nth-child(2) nav{display:none!important}
+#top>div[aria-hidden]{display:none!important}
+#top>div:first-child{position:absolute!important;left:0;right:0;bottom:0;z-index:3;width:100%!important;box-sizing:border-box;padding:70px 14px 14px!important;gap:10px!important;background:linear-gradient(180deg,rgba(20,13,13,0) 0%,rgba(20,13,13,.72) 42%,rgba(20,13,13,.9) 100%)!important;color:#FAF8F6}
+#top>div:first-child>p,#top h1{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;border:0!important;white-space:nowrap}
+.hero-chips{display:flex!important;flex-wrap:wrap;gap:6px;width:100%}
+.hero-chips button{padding:7px 12px;border:1px solid rgba(250,248,246,.7);background:rgba(20,13,13,.28);color:#FAF8F6;font:400 11.5px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(3px)}
+#top div[style*="gap:14px"]{flex-wrap:nowrap!important;gap:8px!important;width:100%}
+#top div[style*="gap:14px"] a{flex:1 1 0;min-width:0;justify-content:center;box-sizing:border-box;min-height:46px!important;padding:0 6px!important;font-size:11px!important;letter-spacing:.07em!important;text-align:center;line-height:1.25;gap:0!important}
+#top div[style*="gap:14px"] a:first-child{background:#FAF8F6!important;color:#171717!important;border:1px solid #FAF8F6!important}
+#top div[style*="gap:14px"] a:first-child span{display:none}
+#top div[style*="gap:14px"] a:nth-child(2){background:transparent!important;color:#FAF8F6!important;border:1px solid rgba(250,248,246,.85)!important}
+#top div[style*="gap:20px 44px"]{margin-top:2px!important;padding-top:10px;border-top:1px solid rgba(250,248,246,.25)}
+#top div[style*="gap:20px 44px"] span:first-child{font-size:26px!important;color:#FAF8F6!important}
+#top div[style*="gap:20px 44px"] span:last-child{color:#E9DDD8!important;font-size:10px!important;letter-spacing:.07em!important;line-height:1.3!important}
+.m-cta{transition:opacity .25s,visibility .25s}
+body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
+}
 @media (max-width:760px){header{position:static!important}
 #top div[style*="gap:20px 44px"]{flex-wrap:nowrap!important;gap:14px!important;width:100%}
 #top div[style*="gap:20px 44px"]>div{flex:1 1 0;min-width:0}
@@ -212,6 +234,7 @@ footer{padding-bottom:88px!important}
         <span aria-hidden="true" style="position:absolute; left:-4px; top:50%; width:7px; height:7px; margin-top:-3px; border-radius:50%; background:#C98A6B;"></span>
         <span aria-hidden="true" style="position:absolute; right:-4px; top:50%; width:7px; height:7px; margin-top:-3px; border-radius:50%; background:#C98A6B;"></span>
       </h1>
+      <div class="hero-chips" role="group" aria-label="Направления"><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c1'});d.scrollTop=0;d.showModal();">Волосы</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c2'});d.scrollTop=0;d.showModal();">Ногти</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c3'});d.scrollTop=0;d.showModal();">Брови</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c4'});d.scrollTop=0;d.showModal();">Макияж</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c5'});d.scrollTop=0;d.showModal();">Косметология</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c6'});d.scrollTop=0;d.showModal();">Депиляция</button><button type="button" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c7'});d.scrollTop=0;d.showModal();">Массаж</button></div>
       <p style="margin:0; max-width:480px; font-size:clamp(17px,1.4cqw,20px); line-height:1.55; font-weight:400; color:#4A4440;">Волосы, ногти, брови, макияж, косметология и массаж у 8 мастеров в одном месте. Ежедневно с 9:00 до 21:00.</p>
       <div style="display:flex; flex-wrap:wrap; gap:14px;"><a href="#contacts" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).open();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 30px; background:#171717; color:#FAF8F6; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Записаться онлайн <span aria-hidden="true">→</span></a><a href="#prices" onclick="var e=document.getElementById('prices');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Смотреть услуги и цены</a></div>
       <div style="display:flex; flex-wrap:wrap; gap:20px 44px; margin-top:4px;">
@@ -903,4 +926,5 @@ return K;
 
 
 </div>
+<script>(function(){try{var h=document.querySelector('header');function f(){document.documentElement.style.setProperty('--hh',(h?h.offsetHeight:140)+'px')}f();addEventListener('resize',f);addEventListener('load',f)}catch(_){}try{var t=document.getElementById('top');if(!t||!window.IntersectionObserver)return;new IntersectionObserver(function(e){document.body.classList.toggle('hero-in',e[0].intersectionRatio>.45)},{threshold:[0,.25,.45,.7,1]}).observe(t)}catch(_){}})()</script>
 </body></html>
