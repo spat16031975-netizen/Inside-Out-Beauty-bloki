@@ -199,6 +199,11 @@ footer{padding-bottom:88px!important}
 .m-cta{transition:opacity .25s,visibility .25s}
 body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
 }
+.hero-call{display:none!important}
+@media (max-width:760px){
+#top .hero-prices{display:none!important}
+#top .hero-call{display:inline-flex!important;background:transparent!important;color:#FAF8F6!important;border:1px solid rgba(250,248,246,.85)!important}
+}
 @media (max-width:760px){header{position:static!important}
 #top div[style*="gap:20px 44px"]{flex-wrap:nowrap!important;gap:14px!important;width:100%}
 #top div[style*="gap:20px 44px"]>div{flex:1 1 0;min-width:0}
@@ -237,7 +242,7 @@ body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
         <span aria-hidden="true" style="position:absolute; right:-4px; top:50%; width:7px; height:7px; margin-top:-3px; border-radius:50%; background:#C98A6B;"></span>
       </h1>
       <p style="margin:0; max-width:480px; font-size:clamp(17px,1.4cqw,20px); line-height:1.55; font-weight:400; color:#4A4440;">Волосы, ногти, брови, макияж, косметология и массаж у 8 мастеров в одном месте. Ежедневно с 9:00 до 21:00.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:14px;"><a href="#contacts" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).open();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 30px; background:#171717; color:#FAF8F6; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Записаться онлайн <span aria-hidden="true">→</span></a><a href="#prices" onclick="var e=document.getElementById('prices');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Смотреть услуги и цены</a></div>
+      <div style="display:flex; flex-wrap:wrap; gap:14px;"><a href="#contacts" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).open();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 30px; background:#171717; color:#FAF8F6; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Записаться онлайн <span aria-hidden="true">→</span></a><a class="hero-prices" href="#prices" onclick="var e=document.getElementById('prices');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Смотреть услуги и цены</a><a href="#contacts" class="hero-call" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).callOpen();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Заказать звонок</a></div>
       <div style="display:flex; flex-wrap:wrap; gap:20px 44px; margin-top:4px;">
         <div style="display:flex; flex-direction:column; gap:6px;">
           <span style="font-family:'Cormorant Garamond','Times New Roman',serif; font-size:38px; line-height:1; font-weight:500;">7</span>
