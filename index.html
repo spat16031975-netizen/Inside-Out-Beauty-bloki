@@ -116,6 +116,12 @@ footer{padding-bottom:88px!important}
 #top div[style*="gap:20px 44px"]{margin-top:0!important}
 #top div[style*="gap:20px 44px"] span:first-child{font-size:32px!important}
 #book .bk2{grid-template-columns:1fr!important}
+#book .bk-ms{grid-template-columns:1fr 1fr!important;gap:8px!important}
+#book .bk-m{flex-direction:row!important;align-items:center!important;text-align:left!important;gap:9px!important;padding:8px 8px!important}
+#book .bk-m>span:first-child{width:42px!important;height:42px!important;flex:0 0 42px}
+#book .bk-m .bk-mt{display:flex!important;flex-direction:column;gap:1px;min-width:0}
+#book .bk-m b{font-size:14px!important}
+#book .bk-m small{font-size:11px!important;line-height:1.25}
 #works{padding-top:8px!important;padding-bottom:4px!important}
 #works>div:first-child{gap:12px!important}
 #works>div:first-child p{font-size:13.5px!important;line-height:1.5!important}
@@ -694,8 +700,8 @@ function crumbs(){var a=[];if(S.m)a.push(S.m.name);if(S.svc&&S.step>2)a.push(S.s
  return '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:13px;min-height:24px;">'+(S.step>1?'<button type="button" onclick="BK.back()" style="border:0;background:none;cursor:pointer;font:400 13px Inter,sans-serif;text-decoration:underline;padding:0;color:#191817;">← Назад</button>':'')+'<span style="color:#6B5B5E;">Шаг '+S.step+' из 4'+(a.length?' · '+a.join(' · '):'')+'</span></div>'}
 function h(t){return '<div style="'+LB+'margin-bottom:10px;">'+t+'</div>'}
 function render(){var b=body(),H=crumbs();
- if(S.step===1){H+=h('Выберите мастера')+'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;">';
-  BM.forEach(function(m,i){H+='<button type="button" onclick="BK.pm('+i+')" style="border:0;background:#FFFDFC;padding:10px 6px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:Inter,sans-serif;color:#191817;"><span style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:#EFE6DA;display:block;"><img src="'+m.img+'" alt="'+m.name+'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" loading="lazy" decoding="async"></span><b style="font-weight:500;font-size:15px;">'+m.name+'</b><small style="font-size:12px;color:#6B5B5E;">'+m.role+'</small></button>'});
+ if(S.step===1){H+=h('Выберите мастера')+'<div class="bk-ms" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;">';
+  BM.forEach(function(m,i){H+='<button type="button" class="bk-m" onclick="BK.pm('+i+')" style="border:0;background:#FFFDFC;padding:10px 6px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:Inter,sans-serif;color:#191817;"><span style="width:64px;height:64px;border-radius:50%;overflow:hidden;background:#EFE6DA;display:block;"><img src="'+m.img+'" alt="'+m.name+'" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" loading="lazy" decoding="async"></span><span class="bk-mt" style="display:contents;"><b style="font-weight:500;font-size:15px;">'+m.name+'</b><small style="font-size:12px;color:#6B5B5E;">'+m.role+'</small></span></button>'});
   H+='</div>'}
  else if(S.step===2){var ss=subs();if(S.sub>=ss.length)S.sub=0;H+=h('Выберите процедуру · '+S.m.name);
   if(ss.length>1){H+='<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">';ss.forEach(function(x,i){H+='<button type="button" onclick="BK.ps('+i+')" style="'+(i===S.sub?CHON:CH)+'">'+x[0]+'</button>'});H+='</div>'}
