@@ -106,6 +106,19 @@ footer div{max-width:100%!important}
 footer{padding-bottom:88px!important}
 }
 
+@media (max-width:760px){
+#top>div:first-child{padding-top:12px!important;padding-bottom:22px!important;gap:12px!important}
+#top>div:first-child>p:nth-of-type(2){font-size:16px!important;line-height:1.45!important}
+#top>div:first-child a[style*="min-height:60"],#top>div:first-child a[style*="min-height:5"]{min-height:50px!important}
+#top h1{padding:16px 34px 14px!important}
+#top h1 span:nth-child(1){font-size:34px!important}
+#top h1 span:nth-child(2){font-size:19px!important;margin-top:8px!important}
+#top div[style*="gap:20px 44px"]{margin-top:0!important}
+#top div[style*="gap:20px 44px"] span:first-child{font-size:32px!important}
+#book .bk2{grid-template-columns:1fr!important}
+#book>div{padding:18px 18px 22px!important}
+}
+
 @media (max-width:760px){header{position:static!important}
 #top div[style*="gap:20px 44px"]{flex-wrap:nowrap!important;gap:14px!important;width:100%}
 #top div[style*="gap:20px 44px"]>div{flex:1 1 0;min-width:0}
@@ -684,7 +697,7 @@ function render(){var b=body(),H=crumbs();
   H+='</div>';
   if(S.date){var dd=new Date(n.getFullYear(),n.getMonth(),n.getDate()+S.date.k);H+=h('Выберите время')+'<div style="display:flex;flex-wrap:wrap;gap:6px;">';slots(dd,n).forEach(function(t){H+='<button type="button" onclick="BK.pt(\''+t+'\')" style="'+CH+'">'+t+'</button>'});H+='</div>'}}
  else if(S.step===4){H+='<div style="background:#FFFDFC;padding:12px 14px;margin-bottom:12px;font-size:14px;line-height:1.5;"><b style="font-weight:500;">'+S.svc.n+'</b> — '+fmt(S.svc.p)+'<br>Мастер: '+S.m.name+' · '+S.date.l+', '+S.time+'</div>'+
-  '<form onsubmit="return false" style="display:flex;flex-direction:column;gap:10px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div><div style="'+LB+'margin-bottom:5px;">Имя</div><input id="bk-name" type="text" placeholder="Как к вам обращаться" style="'+IN+'width:100%;"></div><div><div style="'+LB+'margin-bottom:5px;">Телефон</div><input id="bk-phone" type="tel" placeholder="+375 (__) ___-__-__" oninput="BK.mask(this)" style="'+IN+'width:100%;"></div></div>'+
+  '<form onsubmit="return false" style="display:flex;flex-direction:column;gap:10px;"><div class="bk2" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div><div style="'+LB+'margin-bottom:5px;">Имя</div><input id="bk-name" type="text" placeholder="Как к вам обращаться" style="'+IN+'width:100%;"></div><div><div style="'+LB+'margin-bottom:5px;">Телефон</div><input id="bk-phone" type="tel" placeholder="+375 (__) ___-__-__" oninput="BK.mask(this)" style="'+IN+'width:100%;"></div></div>'+
   '<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.4;"><input id="bk-ok" type="checkbox" style="margin-top:2px;width:18px;height:18px;flex:0 0 18px;"><span>Я даю согласие на обработку моих персональных данных (имя, телефон) для обработки заявки в соответствии с <a href="#" onclick="var d=document.getElementById(\'pol\');d.querySelectorAll(\'[data-d]\').forEach(function(x){x.hidden=x.dataset.d!==\'pd\'});d.showModal();return false;" style="color:#8A5A52;">Политикой обработки персональных данных</a>.</span></label>'+
   '<p id="bk-err" hidden style="margin:0;font-size:13px;color:#9B2C2C;"></p><button type="button" onclick="BK.send()" style="min-height:50px;border:0;background:#171717;color:#FAF8F6;font:400 12px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;">Записаться</button></form>'}
  else{H='<p style="margin:20px 0 0;font-size:16px;line-height:1.6;">Спасибо! Заявка принята:<br><b style="font-weight:500;">'+S.svc.n+'</b><br>Мастер '+S.m.name+', '+S.date.l+', '+S.time+'.<br>Мы подтвердим запись по телефону.</p>'}
