@@ -182,7 +182,7 @@ footer{padding-bottom:88px!important}
 #top>div:nth-child(2) nav{display:none!important}
 #top>div[aria-hidden]{display:none!important}
 #top>div:first-child{position:absolute!important;left:0;right:0;bottom:0;z-index:3;width:100%!important;box-sizing:border-box;padding:70px 14px 14px!important;gap:10px!important;background:linear-gradient(180deg,rgba(20,13,13,0) 0%,rgba(20,13,13,.72) 42%,rgba(20,13,13,.9) 100%)!important;color:#FAF8F6}
-#top>div:first-child>p,#top h1{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;border:0!important;white-space:nowrap}
+#top>div:first-child>p:first-of-type{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;border:0!important;white-space:nowrap}
 #top div[style*="gap:14px"]{flex-wrap:nowrap!important;gap:8px!important;width:100%}
 #top div[style*="gap:14px"] a{flex:1 1 0;min-width:0;justify-content:center;box-sizing:border-box;min-height:46px!important;padding:0 6px!important;font-size:11px!important;letter-spacing:.07em!important;text-align:center;line-height:1.25;gap:0!important}
 #top div[style*="gap:14px"] a:first-child{background:#FAF8F6!important;color:#171717!important;border:1px solid #FAF8F6!important}
@@ -203,6 +203,24 @@ body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
 @media (max-width:760px){
 #top .hero-prices{display:none!important}
 #top .hero-call{display:inline-flex!important;background:transparent!important;color:#FAF8F6!important;border:1px solid rgba(250,248,246,.85)!important}
+}
+.hero-h .hl{display:block;font-weight:400}.hero-h .hl i{font-style:normal;color:#8A5A52}
+@media (max-width:760px){
+#top h1.hero-h{padding:0!important;margin:0!important;font-size:21px!important;line-height:1.15!important;color:#FAF8F6!important;letter-spacing:.01em!important;font-style:normal!important}
+#top h1.hero-h .hl i{color:#E9B7B2!important}
+#top .hero-sub{font-size:12.5px!important;line-height:1.4!important;color:#E9DDD8!important;letter-spacing:0!important;max-width:none!important}
+#top>div:first-child{gap:6px!important;padding-top:12px!important}
+header nav{gap:0 14px!important}
+#top h1.hero-h{font-size:19.5px!important}
+#top>div:first-child p.hero-sub:nth-of-type(n){font-size:12px!important;line-height:1.38!important;letter-spacing:0!important}
+#top>div:first-child{padding:10px 12px 10px!important;gap:5px!important}
+#top div[style*="gap:14px"] a{min-height:42px!important}
+#top div[style*="gap:20px 44px"]{margin-top:0!important;padding-top:7px!important;gap:6px!important}
+#top div[style*="gap:20px 44px"]>div{flex-direction:row!important;align-items:center!important;gap:6px!important}
+#top div[style*="gap:20px 44px"] span:first-child{font-size:22px!important}
+#top div[style*="gap:20px 44px"] span:last-child{font-size:9px!important;line-height:1.25!important;letter-spacing:.05em!important}
+#top>div:nth-child(2) img{object-position:50% 62%!important}
+header nav a{font-size:10.5px!important;letter-spacing:.05em!important}
 }
 @media (max-width:760px){header{position:static!important}
 #top div[style*="gap:20px 44px"]{flex-wrap:nowrap!important;gap:14px!important;width:100%}
@@ -235,13 +253,8 @@ body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
   <section id="top" style="position:relative; z-index:2; display:flex; flex-wrap:wrap; background:linear-gradient(90deg,rgba(244,241,236,0) 65%,#EFE6DA 65%),linear-gradient(160deg,#F8EDED 0%,#E9D8D8 100%);">
     <div style="flex:1 1 440px; min-width:0; box-sizing:border-box; padding:48px 24px 48px 9cqw; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:28px;">
       <p style="margin:0; font-size:15px; font-weight:400; letter-spacing:.32em; text-transform:uppercase; color:#8A5A52;">Минск</p>
-      <h1 style="position:relative; margin:0; padding:22px 46px 20px; border:1px solid #D9C6BF; display:flex; flex-direction:column; align-items:center; font-weight:400;">
-        <span style="display:block; font-family:'Tenor Sans','Cormorant Garamond','Times New Roman',serif; font-weight:400; font-size:clamp(38px,4cqw,58px); line-height:.95; letter-spacing:.02em; color:#191817; white-space:nowrap;">INSIDE OUT</span>
-        <span style="display:block; margin-top:12px; font-family:'Tenor Sans','Cormorant Garamond','Times New Roman',serif; font-weight:400; font-size:clamp(21px,2.2cqw,32px); line-height:1; letter-spacing:.44em; text-indent:.44em; color:#191817;">BEAUTY</span>
-        <span aria-hidden="true" style="position:absolute; left:-4px; top:50%; width:7px; height:7px; margin-top:-3px; border-radius:50%; background:#C98A6B;"></span>
-        <span aria-hidden="true" style="position:absolute; right:-4px; top:50%; width:7px; height:7px; margin-top:-3px; border-radius:50%; background:#C98A6B;"></span>
-      </h1>
-      <p style="margin:0; max-width:480px; font-size:clamp(17px,1.4cqw,20px); line-height:1.55; font-weight:400; color:#4A4440;">Волосы, ногти, брови, макияж, косметология и массаж у 8 мастеров в одном месте. Ежедневно с 9:00 до 21:00.</p>
+      <h1 class="hero-h" style="margin:0; font-family:'Tenor Sans','Cormorant Garamond','Times New Roman',serif; font-weight:400; font-size:clamp(30px,3.1cqw,44px); line-height:1.12; letter-spacing:0; color:#191817;"><b class="hl">Красота <i>без шаблонов.</i></b> <b class="hl">Визиты <i>без задержек.</i></b> <b class="hl">Цены <i>без сюрпризов.</i></b></h1>
+      <p class="hero-sub" style="margin:0; max-width:520px; font-size:clamp(17px,1.4cqw,20px); line-height:1.55; font-weight:400; color:#4A4440;">Все семь бьюти-направлений в одном салоне. Индивидуальный подход к вашему образу и фиксация стоимости до начала процедуры.</p>
       <div style="display:flex; flex-wrap:wrap; gap:14px;"><a href="#contacts" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).open();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 30px; background:#171717; color:#FAF8F6; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Записаться онлайн <span aria-hidden="true">→</span></a><a class="hero-prices" href="#prices" onclick="var e=document.getElementById('prices');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Смотреть услуги и цены</a><a href="#contacts" class="hero-call" onclick="(window.BK||(window.BK=new Function(document.getElementById('bkjs').value)())).callOpen();return false;" style="display:inline-flex; align-items:center; gap:18px; min-height:60px; padding:0 24px; background:transparent; color:#191817; border:1px solid #191817; font-size:14px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;">Заказать звонок</a></div>
       <div style="display:flex; flex-wrap:wrap; gap:20px 44px; margin-top:4px;">
         <div style="display:flex; flex-direction:column; gap:6px;">
