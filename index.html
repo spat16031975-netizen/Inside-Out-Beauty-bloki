@@ -222,6 +222,10 @@ header nav{gap:0 14px!important}
 #top>div:nth-child(2) img{object-position:50% 62%!important}
 header nav a{font-size:10.5px!important;letter-spacing:.05em!important}
 }
+.to-top{position:fixed;right:16px;bottom:16px;z-index:55;width:48px;height:48px;padding:0;border:1px solid #171717;border-radius:50%;background:#FAF8F6;color:#171717;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(25,24,23,.22);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,visibility .25s,transform .25s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:#171717;color:#FAF8F6}
+@media (max-width:760px){.to-top{right:12px;bottom:78px;width:44px;height:44px}}
 @media (max-width:760px){header{position:static!important}
 #top div[style*="gap:20px 44px"]{flex-wrap:nowrap!important;gap:14px!important;width:100%}
 #top div[style*="gap:20px 44px"]>div{flex:1 1 0;min-width:0}
@@ -946,4 +950,22 @@ return K;
 
 </div>
 <script>(function(){try{var h=document.querySelector('header');function f(){document.documentElement.style.setProperty('--hh',(h?h.offsetHeight:140)+'px')}f();addEventListener('resize',f);addEventListener('load',f)}catch(_){}try{var t=document.getElementById('top');if(!t||!window.IntersectionObserver)return;new IntersectionObserver(function(e){document.body.classList.toggle('hero-in',e[0].intersectionRatio>.45)},{threshold:[0,.25,.45,.7,1]}).observe(t)}catch(_){}})()</script>
+<button type="button" class="to-top" id="toTop" aria-label="Наверх" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V5M5 12l7-7 7 7"/></svg></button>
+<script>(function(){
+var b=document.getElementById('toTop');
+function vis(){if(b)b.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>360)}
+addEventListener('scroll',vis,{passive:true});vis();
+/* мобильная версия: «назад» не выкидывает с сайта, а возвращает наверх */
+var armed=false,mq=matchMedia('(max-width:760px)');
+function arm(){if(armed||!mq.matches)return;armed=true;try{history.pushState({io:1},'',location.href)}catch(_){armed=false}}
+['click','touchend','keydown'].forEach(function(t){addEventListener(t,arm,{passive:true})});
+addEventListener('popstate',function(){
+ if(!armed||!mq.matches)return;
+ var open=document.querySelector('dialog[open]');
+ if(open){open.close();try{history.pushState({io:1},'',location.href)}catch(_){}return}
+ var y=window.scrollY||document.documentElement.scrollTop;
+ if(y>80){window.scrollTo({top:0,behavior:'smooth'});try{history.pushState({io:1},'',location.href)}catch(_){}return}
+ armed=false;history.back()
+});
+})()</script>
 </body></html>
