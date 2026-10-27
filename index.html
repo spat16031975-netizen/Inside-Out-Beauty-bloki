@@ -207,6 +207,8 @@ body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
 #wk .wk-in button{margin-top:6px!important;min-height:42px!important;font-size:11px!important}
 }
 @media (max-width:760px){#masters [style*="right:54%"]{gap:6px!important;padding:0 24px 6px!important}#masters>div>div[style*="top:32cqw"]{margin:8px 20px 28px!important}}
+@media (max-width:760px){#prices{min-height:100svh!important;box-sizing:border-box!important}}
+@media (min-width:761px){#prices{min-height:calc(100vh - 92px)!important;box-sizing:border-box!important;align-items:center!important;padding-top:24px!important;padding-bottom:24px!important}}
 @media (min-width:761px){#masters [style*="border-radius:999px"]{width:min(28cqw,calc((100vh - 240px)*.78))!important;height:min(36cqw,calc(100vh - 240px))!important;top:6cqw!important;right:14cqw!important}#masters [style*="right:54%"]{top:17cqw!important}#masters>div>div[style*="top:32cqw"]{top:25.5cqw!important}}
 @media (min-width:761px){header{flex-wrap:nowrap!important;padding:22px 40px!important;gap:16px 24px!important}header nav{gap:0 26px!important;flex-wrap:nowrap!important}.hd-btns{flex:0 0 auto}.hd-btns a{padding:0 20px!important;font-size:12px!important;white-space:nowrap}}
 @media (min-width:761px) and (max-width:1120px){.hd-call{display:none!important}header nav{gap:0 18px!important}}
@@ -986,7 +988,7 @@ addEventListener('popstate',function(){
 })()</script>
 <script>
 window.goTo=function(id){
- var map={top:[null,0],prices:['#prices ul',40],works:['#works',0],salon:['#salon [data-car]',28],masters:['#masters',0],reviews:['#reviews',0],contacts:['#contacts',0]};
+ var map={top:[null,0],prices:['#prices',0],works:['#works',0],salon:['#salon [data-car]',28],masters:['#masters',0],reviews:['#reviews',0],contacts:['#contacts',0]};
  var m=map[id]||['#'+id,0];
  if(id==='top'){window.scrollTo({top:0,behavior:'smooth'});return}
  var e=document.querySelector(m[0]);if(!e)return;
