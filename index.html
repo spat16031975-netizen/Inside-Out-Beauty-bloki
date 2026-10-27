@@ -60,10 +60,10 @@ header>a:last-child,.hd-btns>a:last-child{min-height:40px!important;padding:0 18
 #masters>div>div:first-child{order:1}
 #masters>div>h2{position:static!important;order:0;margin:0!important;padding:32px 20px 14px!important}
 #masters>div>div[style*="top:32cqw"]{position:static!important;order:2;margin:14px 20px 36px!important}
-#masters [style*="height:50cqw"]{height:auto!important;display:flex!important;flex-direction:column!important;background:#EFE6DA;padding:24px 0 12px!important}
+#masters [style*="height:50cqw"]{height:auto!important;display:flex!important;flex-direction:column!important;background:#EFE6DA;padding:14px 0 8px!important}
 #masters [style*="height:50cqw"]>div{position:static!important;transform:none!important;left:auto!important;right:auto!important;top:auto!important}
 #masters [style*="height:50cqw"]>div[style*="right:48%"]{display:none!important}
-#masters [style*="height:50cqw"]>div[style*="border-radius:999px"]{position:relative!important;order:1;width:68%!important;height:auto!important;aspect-ratio:4/5;margin:0 auto 20px!important}
+#masters [style*="height:50cqw"]>div[style*="border-radius:999px"]{position:relative!important;order:1;width:46%!important;height:auto!important;aspect-ratio:4/5;margin:0 auto 12px!important}
 #masters [style*="right:54%"]{order:2;padding:0 24px 12px!important;width:auto!important}
 #masters [style*="right:54%"] p{max-width:none!important}
 #reviews{margin-top:0!important;padding:40px 20px 48px!important}
@@ -200,6 +200,8 @@ footer{padding-bottom:88px!important}
 body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
 }
 .hero-prices{display:none!important}
+@media (max-width:760px){#masters [style*="right:54%"]{gap:6px!important;padding:0 24px 6px!important}#masters>div>div[style*="top:32cqw"]{margin:8px 20px 28px!important}}
+@media (min-width:761px){#masters [style*="border-radius:999px"]{width:min(25cqw,calc((100vh - 260px)*.78))!important;height:min(32cqw,calc(100vh - 260px))!important;top:6cqw!important;right:15cqw!important}}
 @media (min-width:761px){header{flex-wrap:nowrap!important;padding:22px 40px!important;gap:16px 24px!important}header nav{gap:0 26px!important;flex-wrap:nowrap!important}.hd-btns{flex:0 0 auto}.hd-btns a{padding:0 20px!important;font-size:12px!important;white-space:nowrap}}
 @media (min-width:761px) and (max-width:1120px){.hd-call{display:none!important}header nav{gap:0 18px!important}}
 @media (min-width:761px){#top div[style*="gap:14px"]{flex-wrap:nowrap!important;gap:10px!important;width:100%}#top div[style*="gap:14px"] a{flex:0 1 auto;min-width:0;padding:0 18px!important;font-size:13px!important;letter-spacing:.08em!important;gap:12px!important;box-sizing:border-box;white-space:nowrap}}
