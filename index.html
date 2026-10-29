@@ -318,7 +318,6 @@ body.hero-in .m-cta{opacity:0;visibility:hidden;pointer-events:none}
           <li role="button" tabindex="0" onclick="var d=document.getElementById('svc');d.querySelectorAll('[data-p]').forEach(function(x){x.hidden=x.dataset.p!=='c7'});d.scrollTop=0;d.showModal();" onkeydown="if(event.key==='Enter')this.click()" style="display:flex; gap:24px; align-items:baseline; padding:11px 0; border-bottom:1px solid transparent; border-image:linear-gradient(90deg,#C18B82,rgba(201,154,154,0)) 1; cursor:pointer;"><span style="font-size:13px; color:#A5746B;">07</span><span style="flex:1; font-size:14px; font-weight:400; letter-spacing:.16em; text-transform:uppercase;">Массаж</span><span aria-hidden="true" style="color:#C18B82;">→</span></li>
         </ul>
         <p style="margin:0; font-size:13px; color:#554C48;">Нажмите на направление, чтобы увидеть услуги и цены. Цены фиксированные: сумма не меняется после записи. Демо: цены условные.</p>
-        <div style="width:100%; margin-top:6px; padding-top:14px; border-top:1px solid rgba(138,90,82,.28);"><div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8A5A52; margin-bottom:6px;">Популярное</div><ul class="pop" style="list-style:none; margin:0; padding:0;"><li><span>Коррекция бровей</span><b>27 BYN</b></li><li><span>Маникюр с гель-лаком</span><b>66,7 BYN</b></li><li><span>Женская стрижка — длинные</span><b>85 BYN</b></li><li><span>Дневной макияж</span><b>116,7 BYN</b></li></ul></div>
         
       </div>
         <dialog id="svc" onclick="if(event.target===this)this.close()" style="width:min(760px,92vw); max-height:94vh; padding:0; border:0; background:#FBF9F8; color:#191817; font-family:Inter,sans-serif; box-shadow:0 20px 60px rgba(25,24,23,.35); overflow:auto;">
@@ -985,7 +984,7 @@ addEventListener('popstate',function(){
  var open=document.querySelector('dialog[open]');
  if(open){open.close();try{history.pushState({io:1},'',location.href)}catch(_){}return}
  var y=window.scrollY||document.documentElement.scrollTop;
- if(y>80){window.scrollTo({top:0,behavior:'smooth'});try{history.pushState({io:1},'',location.href)}catch(_){}return}
+ if(y>2){var d=document.documentElement,old=d.style.scrollBehavior;d.style.scrollBehavior='auto';window.scrollTo(0,0);d.scrollTop=0;document.body.scrollTop=0;setTimeout(function(){window.scrollTo(0,0);d.style.scrollBehavior=old},60);try{history.pushState({io:1},'',location.href)}catch(_){}return}
  armed=false;history.back()
 });
 })()</script>
@@ -1054,7 +1053,6 @@ t.addEventListener('dragstart',function(e){e.preventDefault()});
 })();
 </script>
 <style>
-.pop li{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-size:14px;color:#191817}.pop b{font-weight:400;white-space:nowrap}
 #why h3{color:#2A2523}#why p{color:#3F3734!important}
 #top .hero-eyebrow-m{display:none}
 @media (max-width:760px){
@@ -1062,7 +1060,6 @@ t.addEventListener('dragstart',function(e){e.preventDefault()});
 html body #top a.hero-call,html body #top div[style*="gap:20px 44px"] span,html body .m-cta button{font-size:12px!important}
 #why h3{font-size:12px!important}#why p{font-size:13px!important}
 header>nav>a{font-size:12px!important;padding:13px 0!important}
-#prices{padding-bottom:96px!important}
 html body footer button{display:inline-flex!important;align-items:center;padding:0!important;min-height:40px!important;box-sizing:border-box}
 }
 </style>
@@ -1077,8 +1074,8 @@ html body footer button{display:inline-flex!important;align-items:center;padding
 @media (max-width:760px){
 .hd-btns>a{display:none!important}
 html body #top>div:nth-child(2){background:#DDD8D8!important}
-html body #top>div:nth-child(2) img{inset:auto 0 0 0!important;top:auto!important;height:88%!important;object-fit:cover!important;object-position:50% 0%!important}
-html body #top>div:nth-child(2)::before{content:"";position:absolute;left:0;right:0;top:calc(12% - 2px);height:46px;z-index:2;pointer-events:none;background:linear-gradient(#DDD8D8,rgba(221,216,216,0))}
+html body #top>div:nth-child(2) img{inset:auto!important;left:7%!important;top:18px!important;width:86%!important;height:auto!important;max-height:calc(100% - 18px)!important;object-fit:contain!important;-webkit-mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%);mask-composite:intersect}
+
 #works>div:not([data-car]):not([data-wk]){text-align:center}
 #works button[onclick*="WK.open"]{display:block!important;margin:6px auto 0!important}
 }
