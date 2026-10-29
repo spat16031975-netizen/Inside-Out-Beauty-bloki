@@ -984,7 +984,13 @@ addEventListener('popstate',function(){
  var open=document.querySelector('dialog[open]');
  if(open){open.close();try{history.pushState({io:1},'',location.href)}catch(_){}return}
  var y=window.scrollY||document.documentElement.scrollTop;
- if(y>2){var d=document.documentElement,old=d.style.scrollBehavior;d.style.scrollBehavior='auto';window.scrollTo(0,0);d.scrollTop=0;document.body.scrollTop=0;setTimeout(function(){window.scrollTo(0,0);d.style.scrollBehavior=old},60);try{history.pushState({io:1},'',location.href)}catch(_){}return}
+ if(y>2){try{history.pushState({io:1},'',location.href)}catch(_){}
+  var d=document.documentElement,ob=d.style.scrollBehavior;d.style.scrollBehavior='auto';
+  var dur=Math.min(1100,Math.max(450,y*0.35)),t0=performance.now(),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){window.scrollTo(0,0);d.style.scrollBehavior=ob;return}
+  (function step(t){var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);window.scrollTo(0,Math.round(y*(1-e)));
+   if(k<1)requestAnimationFrame(step);else{window.scrollTo(0,0);d.scrollTop=0;document.body.scrollTop=0;d.style.scrollBehavior=ob}})(t0);
+  return}
  armed=false;history.back()
 });
 })()</script>
