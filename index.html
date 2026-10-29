@@ -1083,4 +1083,23 @@ html body #top>div:first-child::before{display:none!important}
 }
 </style>
 <script>(function(){var t=document.getElementById('top'),p=t&&t.firstElementChild;function f(){if(!p)return;t.style.setProperty('--plate',Math.max(0,p.offsetHeight-24)+'px')}f();addEventListener('resize',f);addEventListener('load',f);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(f)})()</script>
+<style>
+#masters [data-car]>div[style*="top:32cqw"]{display:contents!important}
+#masters [data-car]>div[style*="top:32cqw"]>button{position:absolute!important;z-index:6;margin:0!important;background:rgba(255,255,255,.92)!important;box-shadow:0 4px 14px rgba(25,24,23,.14)}
+@media (max-width:760px){#masters [data-car]>div[style*="top:32cqw"]>button{width:40px!important;height:40px!important}}
+</style>
+<script>(function(){var car=document.querySelector('#masters [data-car]');if(!car)return;var sc=car.querySelector('[data-sc]'),ph=car.querySelector('[style*="border-radius:999px"]'),bs=car.querySelectorAll('[style*="top:32cqw"]>button');if(!sc||!ph||bs.length<2)return;
+function place(){var c=car.getBoundingClientRect(),r=ph.getBoundingClientRect(),x0=r.left+sc.scrollLeft-c.left,w=r.width,sz=bs[0].offsetWidth||46,g=14,top=r.top-c.top+r.height/2-sz/2;
+bs[0].style.left=Math.max(4,x0-g-sz)+'px';bs[1].style.left=Math.min(c.width-sz-4,x0+w+g)+'px';bs[0].style.top=bs[1].style.top=top+'px'}
+place();addEventListener('resize',place);addEventListener('load',place);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);setTimeout(place,600)})()</script>
+<script>(function(){var t=document.querySelector('#masters [data-car]>[data-sc]');if(!t)return;
+t.style.cursor='grab';t.style.userSelect='none';
+var down=false,x0=0,s0=0;
+t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0)return;down=true;x0=e.clientX;s0=t.scrollLeft;t.style.scrollSnapType='none';t.style.cursor='grabbing'});
+window.addEventListener('pointermove',function(e){if(!down)return;t.scrollLeft=s0-(e.clientX-x0)});
+function end(){if(!down)return;down=false;t.style.cursor='grab';var w=t.clientWidth,i=Math.round(s0/w),d=t.scrollLeft-s0;if(d>w*0.1)i++;else if(d<-w*0.1)i--;i=Math.max(0,Math.min(t.children.length-1,i));
+t.scrollTo({left:i*w,behavior:'smooth'});setTimeout(function(){t.style.scrollSnapType=''},450)}
+window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end);
+t.addEventListener('dragstart',function(e){e.preventDefault()});
+})();</script>
 </body></html>
