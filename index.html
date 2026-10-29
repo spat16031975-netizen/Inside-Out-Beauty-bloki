@@ -308,6 +308,19 @@ html body #top>div:first-child::before{display:none!important}
 header{height:119px!important;box-sizing:border-box!important;overflow:hidden!important}
 html body #top>div:first-child{min-height:256px!important}
 }
+
+@media (max-width:760px){
+#reviews{padding:24px 18px 88px!important;min-height:100svh!important;display:flex!important;flex-direction:column!important}
+#reviews>div:nth-child(2){flex:1 1 auto!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;gap:14px!important;min-height:0}
+#reviews h2{font-size:30px!important}
+#reviews>div:nth-child(2)>div:first-child>p{font-size:15px!important;line-height:1.45!important}
+#reviews>div:nth-child(2)>[data-car]{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;min-height:0}
+#reviews .rv-track{flex:1 1 auto;min-height:0}
+.rv-track>figure{padding:44px 22px 28px!important;gap:clamp(20px,4.5vh,44px)!important;justify-content:center!important}
+.rv-track>figure blockquote{font-size:clamp(20px,5.4vw,24px)!important;line-height:1.35!important}
+.rv-track>figure::before{top:14px!important;right:16px!important}
+#reviews>div:nth-child(2)>div:first-child>div:last-child{margin:0!important}
+}
 </style>
 </head><body style="margin:0">
 
